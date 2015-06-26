@@ -1,4 +1,4 @@
-package com.raibledesigns.camel.config;
+package remap.microservice.kernel.config;
 
 import org.apache.camel.component.swagger.DefaultCamelSwaggerServlet;
 import org.springframework.boot.bind.RelaxedPropertyResolver;

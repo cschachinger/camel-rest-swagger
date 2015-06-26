@@ -1,4 +1,4 @@
-package com.raibledesigns.camel;
+package remap.microservice.kernel;
 
 import org.apache.camel.component.servlet.CamelHttpTransportServlet;
 import org.springframework.boot.SpringApplication;

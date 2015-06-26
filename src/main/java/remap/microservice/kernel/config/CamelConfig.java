@@ -1,4 +1,4 @@
-package com.raibledesigns.camel.config;
+package remap.microservice.kernel.config;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.component.metrics.routepolicy.MetricsRoutePolicyFactory;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.raibledesigns.camel")
+@ComponentScan("remap.microservice.kernel")
 public class CamelConfig extends CamelConfiguration {
 	@Value("${logging.trace.enabled}")
 	private Boolean tracingEnabled;
@@ -19,7 +19,7 @@ public class CamelConfig extends CamelConfiguration {
 	@Override
 	protected void setupCamelContext(CamelContext camelContext) throws Exception {
 		PropertiesComponent pc = new PropertiesComponent();
-		pc.setLocation("classpath:application.properties");
+		pc.setLocation("classpath:/application.properties");
 		camelContext.addComponent("properties", pc);
 		// see if trace logging is turned on
 		if (tracingEnabled) {
@@ -37,7 +37,7 @@ public class CamelConfig extends CamelConfiguration {
 		Tracer tracer = new Tracer();
 		tracer.setTraceExceptions(false);
 		tracer.setTraceInterceptors(true);
-		tracer.setLogName("com.raibledesigns.com.api.trace");
+		tracer.setLogName("remap.microservice.kernel.trace");
 		return tracer;
 	}
 }

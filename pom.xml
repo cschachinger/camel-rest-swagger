@@ -4,16 +4,16 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.raibledesigns.camel</groupId>
-	<artifactId>camel-rest-swagger</artifactId>
+	<groupId>remap.microservic</groupId>
+	<artifactId>remap-kernel</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 
-	<name>Camel REST + Swagger</name>
+	<name>Remap Kernel</name>
 	<description>
-		Camel with Spring JavaConfig and Camel's Swagger support with no web.xml
+		
 	</description>
-	<url>http://www.raibledesigns.com</url>
+	<url>http://www.armstrongconsulting.net/remap</url>
 
 	<prerequisites>
 		<maven>3.1.0</maven>
@@ -308,12 +308,7 @@
 			<version>${camel.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.12.2</version>
-			<scope>provided</scope>
-		</dependency>
+
 	</dependencies>
 
 	<reporting>
@@ -361,12 +356,12 @@
 
 	<developers>
 		<developer>
-			<id>mraible</id>
-			<name>Matt Raible</name>
-			<email>matt@raibledesigns.com</email>
-			<organization>Raible Designs</organization>
-			<url>http://raibledesigns.com</url>
-			<timezone>-7</timezone>
+			<id>cschachinger</id>
+			<name>Christoph Schachinger</name>
+			<email>christoph@armstrongconsulting.net</email>
+			<organization>Armstrong Consulting</organization>
+			<url>http://www.armstrongconsulting.net</url>
+			<timezone>+1</timezone>
 		</developer>
 	</developers>
 </project>

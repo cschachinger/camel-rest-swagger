@@ -10,8 +10,8 @@
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d [%-15.15t] %-5p %-30.30c{1} %m%n"/>
 		</Console>
-		<!--RollingFile name="File" fileName="${fileLogDir}/camel-api.log"
-						 filePattern="${fileLogDir}/camel-api-%d{yyyy-MM-dd}-%i.log">
+		<!--RollingFile name="File" fileName="${fileLogDir}/remap-kernel.log"
+						 filePattern="${fileLogDir}/remap-kernel-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout pattern="${fileLogPattern}"/>
 			<Policies>
 				<SizeBasedTriggeringPolicy size="${fileLogTriggerSize}"/>
@@ -23,7 +23,7 @@
 	<Loggers>
 		<Logger name="org.apache.camel" level="info"/>
 		<Logger name="org.springframework" level="error"/>
-		<Logger name="com.raibledesigns.com.api" level="debug"/>
+		<Logger name="remap.microservice.kernel" level="debug"/>
 
 		<Root level="error">
 			<AppenderRef ref="Console"/>

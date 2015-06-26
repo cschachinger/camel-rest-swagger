@@ -1,4 +1,4 @@
-package com.raibledesigns.camel;
+package remap.microservice.kernel;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
@@ -23,9 +23,9 @@ public abstract class AbstractRouteBuilder extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		onException(Exception.class)
-				.setHeader("routeId", property(Exchange.FAILURE_ROUTE_ID))
-				.setHeader("endpoint", property(Exchange.FAILURE_ENDPOINT))
-				.setHeader("exception", property(Exchange.EXCEPTION_CAUGHT))
+				.setHeader("routeId", exchangeProperty(Exchange.FAILURE_ROUTE_ID))
+				.setHeader("endpoint", exchangeProperty(Exchange.FAILURE_ENDPOINT))
+				.setHeader("exception", exchangeProperty(Exchange.EXCEPTION_CAUGHT))
 				.setHeader("subject", simple("Camel Error (" + camelEnv + ") - ${exception.class.simpleName}"))
 				.transform(simple("${exception.message}\n\nStacktrace Details:\n\n${exception.stacktrace}"))
 				.to("freemarker:/templates/mail/error.ftl")

@@ -1,4 +1,4 @@
-package com.raibledesigns.camel.config;
+package remap.microservice.kernel.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,8 +10,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  * JavaConfig for Spring Beans.
  */
 @Configuration
-@ComponentScan("com.raibledesigns.camel.config")
-@PropertySource("classpath:application.properties")
+@ComponentScan("remap.microservice.kernel.config")
+@PropertySource("classpath:/application.properties")
 public class AppConfig {
 
 	@Bean
