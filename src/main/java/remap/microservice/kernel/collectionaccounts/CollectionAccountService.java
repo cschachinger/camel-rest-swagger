@@ -16,7 +16,7 @@ public class CollectionAccountService {
 
 	}
 
-	public List<CollectionAccountSearchResult> findCollectionAccounts() {
+	public List<CollectionAccountSearchResult> findCollectionAccounts(String debtor_reference) {
 
 		List<CollectionAccountSearchResult> list = new ArrayList<CollectionAccountSearchResult>();
 

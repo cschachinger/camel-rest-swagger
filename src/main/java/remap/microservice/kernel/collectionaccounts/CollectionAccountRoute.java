@@ -19,7 +19,7 @@ public class CollectionAccountRoute extends AbstractRouteBuilder {
 			.get("/")
 				.description("Finds collection accounts")
 				.outTypeList(CollectionAccountSearchResult.class)
-				.to("bean:collectionAccountService?method=findCollectionAccounts()")
+				.to("bean:collectionAccountService?method=findCollectionAccounts(${header.debtor_reference})")
 				
 			.get("/{id}")
 				.description("Retrieves a collection account")
