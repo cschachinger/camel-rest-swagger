@@ -1,7 +1,6 @@
 package remap.microservice.kernel.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -10,8 +9,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  * JavaConfig for Spring Beans.
  */
 @Configuration
-@ComponentScan("remap.microservice.kernel.config")
-@PropertySource("classpath:/application.properties")
+@PropertySource("classpath:application.properties")
 public class AppConfig {
 
 	@Bean

@@ -7,20 +7,23 @@ import org.apache.camel.processor.interceptor.Tracer;
 import org.apache.camel.spring.javaconfig.CamelConfiguration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("remap.microservice.kernel")
 public class CamelConfig extends CamelConfiguration {
+	
+	@Value("${namespace}")
+	String namespace;
+	
 	@Value("${logging.trace.enabled}")
 	private Boolean tracingEnabled;
 
 	@Override
 	protected void setupCamelContext(CamelContext camelContext) throws Exception {
 		PropertiesComponent pc = new PropertiesComponent();
-		pc.setLocation("classpath:/application.properties");
+		pc.setLocation("classpath:application.properties");
 		camelContext.addComponent("properties", pc);
+		
 		// see if trace logging is turned on
 		if (tracingEnabled) {
 			camelContext.setTracing(true);
@@ -37,7 +40,7 @@ public class CamelConfig extends CamelConfiguration {
 		Tracer tracer = new Tracer();
 		tracer.setTraceExceptions(false);
 		tracer.setTraceInterceptors(true);
-		tracer.setLogName("remap.microservice.kernel.trace");
+		tracer.setLogName(namespace + ".trace");
 		return tracer;
 	}
 }

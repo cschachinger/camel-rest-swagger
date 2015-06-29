@@ -38,6 +38,7 @@
 		<log4j.version>2.0.1</log4j.version>
 		<java.version>1.8</java.version>
 		<servlet-api.version>3.1.0</servlet-api.version>
+		<swagger.version>1.5.0</swagger.version>
 	</properties>
 
 	<build>
@@ -192,6 +193,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jersey</artifactId>
+		</dependency>
+		
 
 		<!-- camel -->
 		<dependency>
@@ -216,11 +223,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-jackson</artifactId>
-			<version>${camel.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-mail</artifactId>
 			<version>${camel.version}</version>
 		</dependency>
@@ -229,6 +231,7 @@
 			<artifactId>camel-metrics</artifactId>
 			<version>${camel.version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-sql</artifactId>
@@ -239,12 +242,16 @@
 			<artifactId>camel-servlet</artifactId>
 			<version>${camel.version}</version>
 		</dependency>
+		
+		
+
 		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-swagger</artifactId>
-			<version>${camel.version}</version>
+		  <groupId>io.swagger</groupId>
+		  <artifactId>swagger-jersey2-jaxrs</artifactId>
+		  <version>${swagger.version}</version>
 		</dependency>
 
+		
 		<!-- database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
